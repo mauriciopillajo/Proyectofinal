@@ -4,7 +4,7 @@ import './App.css';
 function App() {
 return (
 
-<li>"Users"</li>
+<h1>Crear usuario</h1>
  );
 }
 
