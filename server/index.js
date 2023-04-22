@@ -25,7 +25,7 @@ app.use(insertupdate);
 
 
 
-app.post("/insertupdate",(req, res) =>{
+app.post("/insertupdate",cors(),(req, res) =>{
     console.log(req.body)
     //res.send("Usuario nuevo ingresado post")
 })

@@ -2,6 +2,8 @@ const config = require('../config')
 const express = require("express");
 const router = express.Router();
 const validator = require("validator");
+const cors = require('cors')
+
 router.use(express.json());
 require('dotenv').config();
 const CosmosClient = require("@azure/cosmos").CosmosClient;
@@ -46,7 +48,7 @@ router.get("/insertupdate",async(req,res)=>{
     return res.json({userData});
 });
 
-router.post("/insertupdate",async(req,res)=>{
+router.post("/insertupdate",cors(),async(req,res)=>{
     try{
         let id = configData.config.id;
         let email = req.body.email;

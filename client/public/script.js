@@ -9,7 +9,7 @@ let password2 = document.getElementById("password2").value;
 if (password == password2) {
     let usuario = {email: email, username : username, password : password};
 let usuarioJson = JSON.stringify(usuario);
-
+sweetAlert('alert', "Usuario creado correctamente!", 'alert');
 fetch('http://localhost:3001/insertupdate', {
     method: 'POST',
     body : usuarioJson,
@@ -19,9 +19,11 @@ fetch('http://localhost:3001/insertupdate', {
 }).then(res => res.json())
 .catch(error => console.error('Error:', error))
 .then(response => console.log('Success:', response));
+
+} else {
+
+sweetAlert('error', "Verifique que la contraseña sea igual", 'error')
 }
-
-
 
 
 })
