@@ -10,7 +10,7 @@ if (password == password2) {
     let usuario = {email: email, username : username, password : password};
 let usuarioJson = JSON.stringify(usuario);
 sweetAlert('alert', "Usuario creado correctamente!", 'alert');
-fetch('http://localhost:3001/insertupdate', {
+fetch('http://localhost:3001/usuarios', {
     method: 'POST',
     body : usuarioJson,
     headers:{
@@ -23,8 +23,8 @@ fetch('http://localhost:3001/insertupdate', {
 } else {
 
 sweetAlert('error', "Verifique que la contraseña sea igual", 'error')
-}
 
+}
 
 })
 
