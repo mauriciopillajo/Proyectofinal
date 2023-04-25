@@ -3,14 +3,6 @@ const cors = require('cors')
 
 const app = express()
 
-app.get('/without-cors', (req, res, next) => {
-  res.json({msg: 'Works! 🎉'}) 
-})
-
-app.get('/with-cors', cors(), (req, res, next) => {
-  res.json({msg: 'Works! 🎉'}) 
-})
-
 
 app.get("/", cors(), (req, res, next) =>{
     //console.log(req.body)
@@ -22,7 +14,7 @@ app.options('*', cors())
 var insertupdate = require('./routes/insertupdate');
 
 app.use(insertupdate);
-
+app.use(express.static("public"));
 
 
 app.post("/insertupdate",cors(),(req, res) =>{
