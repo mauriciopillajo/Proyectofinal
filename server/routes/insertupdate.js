@@ -37,7 +37,7 @@ const deleteDocumentAsync = async (id) => {
     return result;
 };
 
-router.get("/insertupdate",async(req,res)=>{
+router.get("/usuarios",async(req,res)=>{
     const querySpec = {
         query: `SELECT * FROM c`
     };
@@ -48,7 +48,7 @@ router.get("/insertupdate",async(req,res)=>{
     return res.json({userData});
 });
 
-router.post("/insertupdate",cors(),async(req,res)=>{
+router.post("/usuarios",cors(),async(req,res)=>{
     try{
         let id = configData.config.id;
         let email = req.body.email;
@@ -86,7 +86,7 @@ router.post("/insertupdate",cors(),async(req,res)=>{
     }
 });
 
-router.delete("/remove/:userid/",async(req,res)=>{
+router.delete("/usuarios/:userid/",async(req,res)=>{
     try{
         const id = req.params.userid;
         console.log('userid',id);
